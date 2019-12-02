@@ -44,6 +44,7 @@ def solve_part_two():
 
             if res[0] == 19690720:
                 print("p2:", 100 * res[1] + res[2])
+                return
 
 if __name__ == '__main__':
     solve_part_one()
