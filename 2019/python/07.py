@@ -17,18 +17,18 @@ TERMINATE = 99
 POSITION_MODE = 0
 IMMEDIATE_MODE = 1
 
-def run_code(code_in, u_in, curr_index):     
+def run_code(code_in, u_in, curr_index):
     code = [x for x in code_in]
     while True:
         opcode = code[curr_index]%100
         mode = [(code[curr_index] // 100)%10, code[curr_index]//1000]
 
         if opcode == ADD:
-            val1, val2, dest = code[curr_index+1], code[curr_index+2], code[curr_index+3] 
+            val1, val2, dest = code[curr_index+1], code[curr_index+2], code[curr_index+3]
             code[dest] = get_real_value(code, mode[0], val1) + get_real_value(code, mode[1], val2)
             curr_index += 4
         elif opcode == MUL:
-            val1, val2, dest = code[curr_index+1], code[curr_index+2], code[curr_index+3] 
+            val1, val2, dest = code[curr_index+1], code[curr_index+2], code[curr_index+3]
             code[dest] = get_real_value(code, mode[0], val1) * get_real_value(code, mode[1], val2)
             curr_index += 4
         elif opcode == IN:
@@ -53,14 +53,14 @@ def run_code(code_in, u_in, curr_index):
             else:
                 curr_index+=3
         elif opcode == LESS_THAN:
-            val1, val2, dest = code[curr_index+1], code[curr_index+2], code[curr_index+3] 
+            val1, val2, dest = code[curr_index+1], code[curr_index+2], code[curr_index+3]
             if get_real_value(code, mode[0], val1) < get_real_value(code, mode[1], val2):
                 code[dest]=1
             else:
                 code[dest]=0
             curr_index+=4
         elif opcode == EQUALS:
-            val1, val2, dest = code[curr_index+1], code[curr_index+2], code[curr_index+3] 
+            val1, val2, dest = code[curr_index+1], code[curr_index+2], code[curr_index+3]
             if get_real_value(code, mode[0], val1) == get_real_value(code, mode[1], val2):
                 code[dest]=1
             else:
@@ -71,7 +71,7 @@ def run_code(code_in, u_in, curr_index):
             return None, curr_index
         else:
             print("Something went wrong")
-        
+
 
 
 def get_real_value(code, mode, value):
@@ -109,7 +109,7 @@ def solve_part_two():
 
     for p in permutations:
         next_val = 0
-        
+
         # index for each run
         ind = [0, 0, 0, 0, 0]
 
