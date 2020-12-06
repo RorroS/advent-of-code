@@ -1,4 +1,3 @@
-
 # Created by https://www.gitignore.io/api/rust,python
 # Edit at https://www.gitignore.io/?templates=rust,python
 
@@ -122,3 +121,4 @@ Cargo.lock
 # End of https://www.gitignore.io/api/rust,python
 
 *.out
+input
