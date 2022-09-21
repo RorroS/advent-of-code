@@ -122,3 +122,4 @@ Cargo.lock
 
 *.out
 input
+node_modules
