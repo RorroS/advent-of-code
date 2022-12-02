@@ -1,6 +1,7 @@
 import * as fs from 'fs';
+import * as path from 'path';
 
-const content = fs.readFileSync('../input/01', 'utf-8').split('\n\n');
+const content = fs.readFileSync(path.join(__dirname, '../input/01'), 'utf-8').split('\n\n');
 
 let allCalories: number[] = [];
 for (const elf of content) {
